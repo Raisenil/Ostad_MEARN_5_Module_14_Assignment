@@ -3,8 +3,6 @@ import TasksModel from '../model/TasksModel.js';
 // task create
 export const create = async (req, res) => {
 	try {
-		// Your Code Here
-
 		let email = req.headers['email'];
 		let reqBody = req.body;
 		reqBody.email = email;
@@ -20,8 +18,6 @@ export const create = async (req, res) => {
 // task read
 export const read = async (req, res) => {
 	try {
-		// Your Code Here
-
 		let email = req.headers['email'];
 		let data = await TasksModel.find({ email: email });
 
@@ -38,8 +34,6 @@ export const read = async (req, res) => {
 // task update
 export const update = async (req, res) => {
 	try {
-		// Your Code Here
-
 		let email = req.headers['email'];
 		let { id } = req.params;
 		let reqBody = req.body;
@@ -55,8 +49,6 @@ export const update = async (req, res) => {
 // task delete
 export const remove = async (req, res) => {
 	try {
-		// Your Code Here
-
 		let email = req.headers['email'];
 		let { id } = req.params;
 
@@ -74,8 +66,6 @@ export const remove = async (req, res) => {
 // task complete/cancel mark
 export const task_status = async (req, res) => {
 	try {
-		// Your Code Here
-
 		let email = req.headers['email'];
 		let { id } = req.params;
 
@@ -119,8 +109,6 @@ export const task_status = async (req, res) => {
 // task complete/cancel list
 export const task_list = async (req, res) => {
 	try {
-		// Your Code Here
-
 		let email = req.headers['email'];
 
 		let new_tasks = await TasksModel.find({

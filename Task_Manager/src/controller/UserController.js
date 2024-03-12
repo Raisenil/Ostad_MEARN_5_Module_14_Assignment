@@ -9,8 +9,6 @@ import OTPModel from '../model/OTPModel.js';
 // Registration Functionality
 export const registration = async (req, res) => {
 	try {
-		// Your Code Here
-
 		let reqBody = req.body;
 		await UsersModel.create(reqBody);
 
@@ -23,7 +21,6 @@ export const registration = async (req, res) => {
 // Login Functionality
 export const login = async (req, res) => {
 	try {
-		// Your Code Here
 		let reqBody = req.body;
 		let user = await UsersModel.find(reqBody);
 
@@ -50,7 +47,6 @@ export const login = async (req, res) => {
 // Profile Detail Show
 export const profileDetails = async (req, res) => {
 	try {
-		// Your Code Here
 		let email = req.headers['email'];
 
 		let result = await UsersModel.find({ email: email });
@@ -68,8 +64,6 @@ export const profileDetails = async (req, res) => {
 // Profile Update
 export const profileUpdate = async (req, res) => {
 	try {
-		// Your Code Here
-
 		let email = req.headers['email'];
 		let reqBody = req.body;
 		await UsersModel.updateOne({ email: email }, reqBody);
@@ -85,8 +79,6 @@ export const profileUpdate = async (req, res) => {
 // Verify Mail OTP send
 export const verifyEmail = async (req, res) => {
 	try {
-		// Your Code Here
-
 		const { email } = req.params;
 		let user = await UsersModel.find({ email: email });
 
@@ -109,8 +101,6 @@ export const verifyEmail = async (req, res) => {
 // Verify OTP
 export const verifyOTP = async (req, res) => {
 	try {
-		// Your Code Here
-
 		const { email, otp } = req.params;
 
 		let user = await OTPModel.find({
@@ -136,8 +126,6 @@ export const verifyOTP = async (req, res) => {
 // Password Reset
 export const passwordReset = async (req, res) => {
 	try {
-		// Your Code Here
-
 		const { email, otp, password } = req.params;
 		let user = await OTPModel.find({
 			email: email,
